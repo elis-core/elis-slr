@@ -3,7 +3,7 @@
 ## 1. Purpose
 
 This document defines SLR-domain artifacts, quality gates, and acceptance criteria for
-OpenClaw PE-OC-05 and subsequent SLR-domain PEs.
+ELIS SLR-domain PEs.
 
 ## 2. Artifact Types
 
@@ -67,4 +67,4 @@ For PE-OC-05 validator checks:
 - Implementer workspace defines at least five SLR acceptance criteria types.
 - Validator workspace defines at least three SLR methodological checks distinct from code-only validation.
 - `scripts/check_slr_quality.py` exits 0 for compliant payload.
-- SLR agent IDs are registered in OpenClaw configuration.
+- SLR agent IDs are registered in ELIS SLR gateway configuration.
