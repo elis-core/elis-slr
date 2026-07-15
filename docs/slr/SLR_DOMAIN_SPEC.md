@@ -63,7 +63,7 @@ Rule:
 
 ## 5. Acceptance Criteria Reference
 
-For PE-OC-05 validator checks:
+For ELIS SLR validator checks:
 - Implementer workspace defines at least five SLR acceptance criteria types.
 - Validator workspace defines at least three SLR methodological checks distinct from code-only validation.
 - `scripts/check_slr_quality.py` exits 0 for compliant payload.
