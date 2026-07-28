@@ -47,4 +47,4 @@ def test_module_execution():
         text=True,
     )
     assert result.returncode == 0
-    assert "Usage:" in result.stdout
+    assert "usage:" in result.stdout
