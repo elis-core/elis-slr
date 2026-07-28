@@ -27,5 +27,14 @@ This is a **Phase 1 canonical baseline** of the SLR protocol and supporting docu
 
 ## Status
 
+**M1 (Package & CLI) — COMPLETE** (2026-07-28)
+The `elis-slr` package is now installable from source:
+- `pip install -e ".[dev]"` — installs the package with dev dependencies
+- `elis-slr --help` — shows CLI help
+- `python -m elis_slr --help` — module execution
+- `pytest` — runs smoke tests (M1 scope)
+
+See `MIGRATION.md` for full migration status and future phases.
+
 Phase 1 canonical baseline staged 2026-07-14. No remote push, no CI/CD, no CLI/migration in this phase.
 See `docs/_active/ELIS_2025_SLR_README_TEMPLATE.md` for the full population-ready template.
