@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "elis-slr"
+version = "2.0.0"
+description = "Systematic Literature Review (SLR) protocol package — independent runnable"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.11"
+dependencies = [
+    "jsonschema==4.23.0",
+    "requests==2.31.0",
+    "PyYAML==6.0.2",
+]
+
+[project.optional-dependencies]
+dev = ["black", "ruff", "pytest"]
+
+[project.scripts]
+elis-slr = "elis_slr.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["elis_slr*"]

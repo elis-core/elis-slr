@@ -12,10 +12,13 @@ __pycache__/
 *.egg-info/
 dist/
 build/
+.eggs/
+*.egg
 .pytest_cache/
 .ruff_cache/
 .mypy_cache/
-*.egg
+venv/
+.venv/
 
 # Runtime state
 *.log
