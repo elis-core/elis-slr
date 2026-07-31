@@ -30,3 +30,27 @@ SLR namespace and working CLI entrypoint.
 **Reference:**
 See `/home/samurai/.hermes/kanban/boards/elis-slr/artifacts/SLR-INDEPENDENT-RUNNABLE-MIGRATION-01-MANIFEST.md`
 for the full migration manifest and future phase definitions.
+
+## Known issue to fix during pipeline migration (not yet ported)
+
+A 2026-07-30 code review of the pre-migration source
+(`rochasamurai/ELIS-Multi-AI-Agent-Platform`'s `elis/pipeline/`, not yet
+present in this package) found a silent data-loss bug in the merge stage:
+
+- `elis/pipeline/merge.py:170` hardcodes `_meta.global` to `{}` when building
+  the canonical Appendix A file, discarding the year-range/language/
+  result-cap config that each per-source harvest step correctly populates
+  (`elis/pipeline/search.py:488`).
+- The next stage, `elis/pipeline/screen.py:269`, silently falls back to
+  hardcoded defaults (1990–current, en/fr/es/pt) with no warning when
+  `_meta.global` is empty — this would quietly corrupt inclusion/exclusion
+  decisions for an entire literature review if it ran against real config
+  that differs from those defaults.
+
+As of this note, the merge/screen stages have not yet been ported into
+`elis_slr` (M1 only covers packaging/CLI scaffolding), so this hasn't
+affected any review run through this package. **When the merge/screen
+stages are migrated (a future M-phase), carry the config through instead
+of hardcoding `_meta.global`, and add a test asserting the merged output's
+`_meta.global` matches the per-source harvest config rather than silently
+defaulting.**
