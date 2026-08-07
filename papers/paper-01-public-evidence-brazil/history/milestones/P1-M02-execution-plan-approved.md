@@ -23,6 +23,8 @@
 
 `PASS_FOR_PO_DECISION` / `PASS_FOR_PHASE_0–3_AUTHORISATION_WITH_BOUNDARIES`
 
+**Review record:** `history/reviews/2026-08-07-advisor-final-execution-plan-validation.md`
+
 ## Canary Status
 
 All 9 blocker canaries defined as Phase 4 gate. Phase 4 cannot proceed until all 9 pass:

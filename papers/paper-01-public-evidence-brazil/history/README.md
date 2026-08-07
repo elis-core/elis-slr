@@ -14,8 +14,8 @@ The `history/` layer captures the full decision trail, review record, and milest
 | `change-log.md` | Versioned record of changes to paper content and methodology |
 | `task-index.json` | Machine-readable index of SLR tasks and their statuses |
 | `decisions/` | Decision records — methodological, coding, literature inclusion/exclusion |
-| `reviews/` | Peer and supervisory review records |
-| `milestones/` | Milestone tracking for paper progression |
+| `reviews/` | Peer and supervisory review records — see `2026-08-07-advisor-final-execution-plan-validation.md` |
+| `milestones/` | Milestone tracking for paper progression — see `P1-M02-execution-plan-approved.md` |
 
 ## Convention
 
