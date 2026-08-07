@@ -1,5 +1,90 @@
 {
   "schema_version": "1.0",
-  "paper_id": "P1",
-  "tasks": []
+  "paper_id": "ELIS-PAPER-01",
+  "tasks": [
+    {
+      "task_id": "t_6b14ef48",
+      "title": "ELIS-SLR-PAPER1-EXECUTION-PACKET — Phase 0–3 execution packet",
+      "agent": "elis-supervisor",
+      "role": "execution-packet-preparation",
+      "status": "done",
+      "verdict": "PASS",
+      "date": "2026-08-07",
+      "result": "Implementation plan v1.0 execution packet prepared for PO decision",
+      "related_decisions": ["P1-DEC-012"],
+      "superseded_by": null
+    },
+    {
+      "task_id": "t_232d47dc",
+      "title": "ELIS-SLR-PAPER1-ADVISOR-FINAL-VALIDATION — Advisor validation of Phases 0–3",
+      "agent": "elis-advisor",
+      "role": "advisor-validation",
+      "status": "done",
+      "verdict": "PASS_FOR_PO_DECISION",
+      "date": "2026-08-07",
+      "result": "Advisor final validation: all governance issues resolved, canaries defined, Phase 3 synthetic-only, Phase 4/5 deferred. Recommended PO authorisation for Phases 0–3.",
+      "related_decisions": ["P1-DEC-012"],
+      "superseded_by": null
+    },
+    {
+      "task_id": "t_d33788fa",
+      "title": "ELIS-SLR-PAPER1-PLAN-PATCH-01 — Schema manifest, 9th canary, Phase 4 wording",
+      "agent": "elis-supervisor",
+      "role": "plan-patch",
+      "status": "done",
+      "verdict": "PASS",
+      "date": "2026-08-07",
+      "result": "Applied all three patches: 12-entry JSON Schema manifest, 9th blocker canary (S0 completeness/sufficiency), Phase 4 wording correction (bounded pilot, not scale-up). 897→921 lines.",
+      "related_decisions": ["P1-DEC-012"],
+      "superseded_by": null
+    },
+    {
+      "task_id": "t_a76c4822",
+      "title": "ELIS-SLR-PAPER1-PLAN-PATCH-02 — 12→8 schemas, consolidated canary",
+      "agent": "elis-supervisor",
+      "role": "plan-patch",
+      "status": "done",
+      "verdict": "PASS",
+      "date": "2026-08-07",
+      "result": "Replaced 12-schema manifest with PO-approved 8-schema manifest (4-column table). Added consolidated canary definition. 921→917 lines.",
+      "related_decisions": ["P1-DEC-012"],
+      "superseded_by": null
+    },
+    {
+      "task_id": "t_6bbf621a",
+      "title": "ELIS-SLR-PAPER1-PLAN-PATCH-03 — JSONL→JSON, ID pattern, expanded-schema language",
+      "agent": "elis-supervisor",
+      "role": "plan-patch",
+      "status": "done",
+      "verdict": "PASS",
+      "date": "2026-08-07",
+      "result": "Applied 4 narrow patches: evidence packet JSONL→JSON, artifact_id ART-P1→P1-A, expanded-schema language update, full-run wording correction. 917→920 lines.",
+      "related_decisions": ["P1-DEC-012"],
+      "superseded_by": null
+    },
+    {
+      "task_id": "t_9eb5e9d0",
+      "title": "ELIS-SLR-PAPER1-PLAN-PATCH-04 — Track-specific sealed paths, human-gate wording",
+      "agent": "elis-supervisor",
+      "role": "plan-patch",
+      "status": "done",
+      "verdict": "PASS",
+      "date": "2026-08-07",
+      "result": "Applied 3 fixes: track-specific sealed trees (evidence/ and literature/), human-gate dependency wording. 920→944 lines.",
+      "related_decisions": ["P1-DEC-012"],
+      "superseded_by": null
+    },
+    {
+      "task_id": "t_1f9cdf54",
+      "title": "ELIS-SLR-PAPER1-PLAN-PATCH-05 — History/ layer",
+      "agent": "elis-supervisor",
+      "role": "plan-patch",
+      "status": "done",
+      "verdict": "PASS",
+      "date": "2026-08-07",
+      "result": "Added Paper 1 Project History Layer section: history/ tree (7 entries), three provenance layers, scope rule, bootstrap source reference. 944→985 lines.",
+      "related_decisions": ["P1-DEC-012"],
+      "superseded_by": null
+    }
+  ]
 }
