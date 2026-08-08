@@ -1,0 +1,470 @@
+{
+  "schema_version": "1.0",
+  "paper_id": "ELIS-PAPER-01",
+  "generated_at": "2026-08-08T11:00:00Z",
+  "method_version": "v0.6.1",
+  "implementation_plan_version": "v1.0",
+  "source_documents": [
+    "ELIS_Paper1_ELIS_SLR_Agent_Adaptation_Implementation_Plan_v1.0_2026-08-07.md",
+    "P1-DEC-001 through P1-DEC-011 (all 11 durable Paper 1 decision records); Phase 0\u20133 authorisation recorded as milestone P1-M02",
+    "P1-M02-execution-plan-approved.md",
+    "STATUS.md"
+  ],
+  "governance_note": "NOT OPERATIVE — H1 human approval required before this Proposition Register governs any downstream work. All propositions are current per method v0.6.1 but subject to H1 review.",
+  "essential_steps": [
+    {
+      "step_id": "ES-01",
+      "name": "Proposition Register Definition & H1 Gate",
+      "phase": "Phase 1",
+      "workflow_order": 1,
+      "description": "Define the canonical proposition register, create supporting schemas, and obtain PO/researcher H1 approval before any search execution begins.",
+      "human_gate": "H1",
+      "blocks_downstream": true
+    },
+    {
+      "step_id": "ES-02",
+      "name": "Protocol & Schema Package",
+      "phase": "Phase 1",
+      "workflow_order": 2,
+      "description": "Create and validate all 8 JSON Schemas, source-families.yaml, query-families.yaml, and model-registry.yaml. Validated by consolidated JSON Schema Validation Canary.",
+      "blocks_downstream": true
+    },
+    {
+      "step_id": "ES-03",
+      "name": "S0 Systematic Deterministic Search",
+      "phase": "Phase 2/3",
+      "workflow_order": 3,
+      "description": "Execute deterministic systematic search from approved Proposition Register, source families, query families, temporal/language scope, and stopping rule. Produce search-log, candidate-artifacts, failed-candidates, source-coverage, and stopping-rule-attestation.",
+      "blocks_downstream": false
+    },
+    {
+      "step_id": "ES-04",
+      "name": "S1 Kimi Independent AI Discovery",
+      "phase": "Phase 2/3",
+      "workflow_order": 4,
+      "description": "Execute independent AI-assisted discovery via Kimi K2.6 from identical versioned input package. Derive own queries. Produce sealed output with completion-attestation and SHA256SUMS.",
+      "blocks_downstream": false
+    },
+    {
+      "step_id": "ES-05",
+      "name": "S2 DeepSeek Independent AI Discovery",
+      "phase": "Phase 2/3",
+      "workflow_order": 5,
+      "description": "Execute independent AI-assisted discovery via DeepSeek V4 Pro (elis-supervisor) from identical versioned input package, under 5-point boundary restriction. Produce sealed output with completion-attestation and SHA256SUMS.",
+      "blocks_downstream": false
+    },
+    {
+      "step_id": "ES-06",
+      "name": "Sealed Lane Release & Candidate Union",
+      "phase": "Phase 2/3",
+      "workflow_order": 6,
+      "description": "Verify all three lane completion attestations. Release sealed directories. Deterministically union candidates, preserving DISCOVERY_ROUTE attribution for every candidate.",
+      "blocks_downstream": true
+    },
+    {
+      "step_id": "ES-07",
+      "name": "Screening",
+      "phase": "Phase 3/4",
+      "workflow_order": 7,
+      "description": "Determine artifact eligibility only. Must not assign PESC values. Preserve exclusions with reasons.",
+      "blocks_downstream": false
+    },
+    {
+      "step_id": "ES-08",
+      "name": "Extraction",
+      "phase": "Phase 3/4",
+      "workflow_order": 8,
+      "description": "Build structured evidence packets from screened artifacts. Validate against actual artifact metadata and verbatim excerpts. AI suggestions must be labelled non-operative.",
+      "blocks_downstream": false
+    },
+    {
+      "step_id": "ES-09",
+      "name": "H2 Human Artifact Admission",
+      "phase": "Phase 4",
+      "workflow_order": 9,
+      "description": "PO/researcher confirms artifact existence, identity, provenance, boundary, and proposition linkage. Blocks Evidence Register admission and all downstream coding/challenge tasks.",
+      "human_gate": "H2",
+      "blocks_downstream": true
+    },
+    {
+      "step_id": "ES-10",
+      "name": "H3 Human PESC Coding",
+      "phase": "Phase 4",
+      "workflow_order": 10,
+      "description": "PO/researcher assigns TYPE, PUB, DUR, AUT values to admitted artifacts. AI suggestions must be labelled non-operative and cannot populate human code fields.",
+      "human_gate": "H3",
+      "blocks_downstream": true
+    },
+    {
+      "step_id": "ES-11",
+      "name": "Targeted AI Challenge",
+      "phase": "Phase 4",
+      "workflow_order": 11,
+      "description": "AI challenges human PESC codes for consistency, contradiction, and completeness. Challenge outputs labelled non-operative. Does not override human codes.",
+      "blocks_downstream": false
+    },
+    {
+      "step_id": "ES-12",
+      "name": "H4 Final Interpretation",
+      "phase": "Phase 4",
+      "workflow_order": 12,
+      "description": "PO/researcher approves proposition scores, step profiles, thresholds, and claims before manuscript integration.",
+      "human_gate": "H4",
+      "blocks_downstream": true
+    },
+    {
+      "step_id": "ES-13",
+      "name": "Integration & Traceability Audit",
+      "phase": "Phase 4/5",
+      "workflow_order": 13,
+      "description": "Integrate only validated and human-approved outputs. Enforce full traceability chain: manuscript claim → result → proposition → artifact → source.",
+      "blocks_downstream": false
+    }
+  ],
+  "propositions": [
+    {
+      "proposition_id": "P1-P-0001",
+      "title": "P1-ART Governance Independence",
+      "proposition_text": "P1-ART (electoral evidence artifact discovery) is governed exclusively by Paper 1's own validated methodology and is NOT governed by the ELIS SLR Protocol or PRISMA guidelines.",
+      "essential_step_id": "ES-01",
+      "applicability": "P1-ART",
+      "rationale": "Paper 1's PESC methodology, three-lane discovery, and proposition-level aggregation have no PRISMA analogue. Conflating governance domains would apply incorrect validation standards.",
+      "TEST_STATEMENT": "A review of all P1-ART workflow documentation, task descriptions, and agent instructions SHALL find zero references to PRISMA compliance requirements for P1-ART tasks, and every P1-ART governance reference SHALL cite Paper 1 methodology v0.6.1 as its sole authority.",
+      "expected_evidence_scope": "All P1-ART workflow documentation, Kanban task bodies, and agent SOUL.md/AGENTS.md files — approximately 10-20 documents.",
+      "source_decision_ids": [
+        "P1-DEC-001"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0002",
+      "title": "P1-LIT Protocol Governance",
+      "proposition_text": "P1-LIT (literature review evidence map) is governed by the ELIS SLR Protocol and follows PRISMA-style discipline for literature discovery, screening, extraction, and synthesis.",
+      "essential_step_id": "ES-01",
+      "applicability": "P1-LIT",
+      "rationale": "The literature review component is a standard systematic review workflow and should follow established protocol discipline to ensure reproducibility and completeness.",
+      "TEST_STATEMENT": "A review of all P1-LIT workflow documentation, task descriptions, and agent instructions SHALL find PRISMA-style discipline requirements (search strategy documentation, inclusion/exclusion criteria, screening procedure, extraction protocol) for every P1-LIT step.",
+      "expected_evidence_scope": "All P1-LIT workflow documentation, screening logs, extraction protocols — approximately 8-15 documents.",
+      "source_decision_ids": [
+        "P1-DEC-001"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0003",
+      "title": "PESC Four-Field Reduction",
+      "proposition_text": "PESC coding uses exactly four fields — TYPE, PUB, DUR, AUT — reduced from the original v0.6 field set, with DUR and AUT treated as independent dimensions.",
+      "essential_step_id": "ES-02",
+      "applicability": "P1-ART",
+      "rationale": "Complexity was the #1 reviewer-identified risk. Reducing to four core fields eliminates coding burden without losing analytical power for Paper 1's research questions. DUR/AUT independence prevents conflation of temporal and authority dimensions.",
+      "TEST_STATEMENT": "The PESC code schema (pesc-code.schema.json) SHALL define exactly four code fields — TYPE, PUB, DUR, AUT — and no others. Any instance of PESC coding output SHALL populate only these four fields.",
+      "expected_evidence_scope": "pesc-code.schema.json, coding/human/pesc-codes.json, all PESC coding instructions — approximately 5-8 artifacts.",
+      "source_decision_ids": [
+        "P1-DEC-002"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0004",
+      "title": "Deterministic V Derivation",
+      "proposition_text": "Evidence value (V) is derived deterministically from PESC field combinations via predefined rules, not via AI judgement or model inference.",
+      "essential_step_id": "ES-02",
+      "applicability": "P1-ART",
+      "rationale": "AI-based V derivation introduces non-determinism and reproducibility risk. Deterministic rules ensure the same PESC codes always produce the same V, eliminating AI coding variance from the evidence-value layer.",
+      "TEST_STATEMENT": "For any set of PESC field values, the V derivation SHALL produce the identical result regardless of which agent or run performs the derivation, and the derivation rules SHALL be expressed as a finite, enumerable function of the four PESC fields.",
+      "expected_evidence_scope": "V derivation rules document, evidence packet outputs with PESC codes and derived V values — approximately 10-50 evidence packets.",
+      "source_decision_ids": [
+        "P1-DEC-002"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0005",
+      "title": "Proposition-Level Single-Pass Aggregation",
+      "proposition_text": "PESC aggregation operates directly at the proposition level in a single pass — all relevant artifacts are evaluated against the proposition simultaneously, eliminating the artifact-to-proposition synthesis pass.",
+      "essential_step_id": "ES-01",
+      "applicability": "P1-ART",
+      "rationale": "Two-pass processing (per-artifact coding then synthesis) introduces a known AI hallucination vector. Single-pass proposition-level aggregation provides direct traceability and reduces total AI coding operations by approximately 40%.",
+      "TEST_STATEMENT": "Every evidence packet SHALL contain a proposition_id field and an artifacts array evaluated against that proposition as a set. No evidence packet SHALL contain per-artifact PESC values awaiting a separate synthesis step.",
+      "expected_evidence_scope": "evidence-packet.schema.json, all evidence packet JSON files — approximately 20-100 evidence packets.",
+      "source_decision_ids": [
+        "P1-DEC-003"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0006",
+      "title": "Three-Lane Discovery Architecture",
+      "proposition_text": "P1-ART artifact discovery uses exactly three independent lanes: S0 (deterministic systematic), S1 (Kimi K2.6 AI-assisted), and S2 (DeepSeek V4 Pro AI-assisted).",
+      "essential_step_id": "ES-03",
+      "applicability": "P1-ART",
+      "rationale": "Three lanes provide methodological triangulation — systematic coverage (S0), a distinct AI discovery surface (S1/Kimi), and an independent AI discovery surface (S2/DeepSeek) to detect omission risk from single-model bias.",
+      "TEST_STATEMENT": "The discovery output tree SHALL contain exactly three lane directories (s0-systematic, s1-kimi, s2-deepseek) under evidence/discovery/, and every candidate artifact SHALL trace to exactly one discovery route.",
+      "expected_evidence_scope": "Directory structure under evidence/discovery/ (s0-systematic, s1-kimi, s2-deepseek), candidate artifact JSON — approximately 3-6 directories plus candidate records.",
+      "source_decision_ids": [
+        "P1-DEC-004"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0007",
+      "title": "Identical Versioned Input Packages",
+      "proposition_text": "Each discovery lane receives an identical versioned input package containing the approved Proposition Register, search protocol version, source families, query families, temporal scope, and language scope.",
+      "essential_step_id": "ES-03",
+      "applicability": "P1-ART",
+      "rationale": "Identical inputs ensure that route-yield differences are attributable to lane discovery behaviour, not to input asymmetry. Version pinning enables reproducible re-runs.",
+      "TEST_STATEMENT": "The input-manifest.json for each lane SHALL reference the same input_package_id and version. Comparing the three input manifests SHALL show identical proposition_ids, source_families, and protocol_version fields.",
+      "expected_evidence_scope": "Three input-manifest.json files (one per lane), Proposition Register — 4 artifacts.",
+      "source_decision_ids": [
+        "P1-DEC-004"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0008",
+      "title": "Sealed Output Directories",
+      "proposition_text": "Each discovery lane writes outputs to its own sealed directory and must not read another lane's outputs before all three lanes complete and their sealed directories are formally released.",
+      "essential_step_id": "ES-04",
+      "applicability": "P1-ART",
+      "rationale": "File-system-level sealing provides enforcement of lane independence beyond Kanban task discipline. Without sealing, shared workspace visibility would undermine omission-detection independence.",
+      "TEST_STATEMENT": "During a discovery run, an access probe from the S1 agent to the S2 sealed directory SHALL be denied or produce no results. After all lanes complete, the sealed-release step SHALL verify all three completion attestations before granting access.",
+      "expected_evidence_scope": "Completion attestation files, SHA256SUMS per lane, directory permissions — approximately 6-9 artifacts.",
+      "source_decision_ids": [
+        "P1-DEC-004"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0009",
+      "title": "S2 Five-Point Boundary",
+      "proposition_text": "The S2 DeepSeek lane (elis-supervisor) operates under a 5-point critical role boundary: discovery only, no cross-lane communication, sealed output, completion attestation, and no platform mutation during discovery.",
+      "essential_step_id": "ES-05",
+      "applicability": "P1-ART",
+      "rationale": "Reusing the elis-supervisor profile (which has platform-ops capabilities) for S2 discovery requires explicit operational guardrails to prevent scope creep and maintain lane independence.",
+      "TEST_STATEMENT": "An audit of the S2 lane's Kanban task body SHALL contain all five boundary constraints. A post-discovery audit SHALL confirm that no profile configurations, Kanban states, or gateway settings were modified during the S2 discovery run.",
+      "expected_evidence_scope": "S2 Kanban task body, S2 output directory, system audit logs — approximately 5-10 artifacts.",
+      "source_decision_ids": [
+        "P1-DEC-005"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0010",
+      "title": "Completion Attestation Requirement",
+      "proposition_text": "Each discovery lane must produce a completion-attestation.md and SHA256SUMS manifest before its outputs can be released for union. A lane that fails to produce both is treated as incomplete.",
+      "essential_step_id": "ES-06",
+      "applicability": "P1-ART",
+      "rationale": "Completion attestation creates auditable proof that a lane finished its discovery run and that its outputs have not been tampered with post-completion. SHA256SUMS provides integrity verification.",
+      "TEST_STATEMENT": "Before the candidate union step executes, all three completion-attestation.md files SHALL exist and their SHA256SUMS SHALL verify against the lane's output files. The absence of either file for any lane SHALL block the union step.",
+      "expected_evidence_scope": "Three completion-attestation.md files, three SHA256SUMS files — 6 artifacts.",
+      "source_decision_ids": [
+        "P1-DEC-004",
+        "P1-DEC-005"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0011",
+      "title": "Route Attribution Preservation",
+      "proposition_text": "Every candidate artifact retains its original DISCOVERY_ROUTE through union, screening, extraction, and coding. Route attribution is never dropped, merged, or rewritten.",
+      "essential_step_id": "ES-06",
+      "applicability": "P1-ART",
+      "rationale": "Route-yield measurement requires persistent route attribution. Dropping routes during union would make it impossible to measure which lanes discovered which artifacts and whether lane independence produced unique candidates.",
+      "TEST_STATEMENT": "For any artifact in the Evidence Register, its discovery_routes field SHALL contain the original route label (S0_SYSTEMATIC, S1_KIMI, or S2_DEEPSEEK). Route-yield metrics SHALL account for every candidate by route.",
+      "expected_evidence_scope": "Candidate union output, evidence packets, Evidence Register, route-yield report — approximately 20-100 records.",
+      "source_decision_ids": [
+        "P1-DEC-004",
+        "P1-DEC-006"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0012",
+      "title": "JSON Single-Document Canonical Format",
+      "proposition_text": "All Paper 1 structured canonical data uses JSON single-document format validated against JSON Schemas, not JSONL or other line-oriented formats.",
+      "essential_step_id": "ES-02",
+      "applicability": "P1-BOTH",
+      "rationale": "Single JSON documents are atomically writable (no partial-write corruption), schema validation operates on the whole document catching cross-entry inconsistencies, and parsing is simpler than JSONL.",
+      "TEST_STATEMENT": "Every file in the canonical data paths (evidence/register/, coding/human/, route-yield/, etc.) SHALL be a valid JSON document that passes validation against its declared schema. No .jsonl files SHALL exist in canonical data paths.",
+      "expected_evidence_scope": "All 8 schema files, all canonical JSON data files — approximately 20-50 files.",
+      "source_decision_ids": [
+        "P1-DEC-006"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0013",
+      "title": "Immutable Artifact ID Pattern",
+      "proposition_text": "Artifact IDs use the pattern P1-A-NNN (e.g. P1-A-001), are assigned at admission, and are immutable once assigned — never reassigned, renumbered, or reused.",
+      "essential_step_id": "ES-09",
+      "applicability": "P1-ART",
+      "rationale": "Stable, unambiguous artifact identifiers are required for the traceability chain. The P1-A-NNN pattern is shorter than the earlier ART-P1-NNN pattern, consistent with P1-DEC-NNN and P1-MNN naming, and prevents ID collisions.",
+      "TEST_STATEMENT": "The Evidence Register SHALL contain only P1-A-NNN artifact IDs. No artifact ID SHALL appear more than once. Comparing the Evidence Register against superseded artifacts SHALL show that no ID has been reassigned.",
+      "expected_evidence_scope": "Evidence Register entries, evidence packets — approximately 20-200 artifacts.",
+      "source_decision_ids": [
+        "P1-DEC-006"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0014",
+      "title": "H1 Gate Blocks Search Execution",
+      "proposition_text": "The H1 human gate (Proposition Register approval) blocks all downstream search execution. S0, S1, and S2 cannot dispatch until H1 is completed by the PO or authorised gate proxy.",
+      "essential_step_id": "ES-01",
+      "applicability": "P1-ART",
+      "rationale": "Searching against an unapproved Proposition Register risks discovering artifacts against propositions that may change, wasting discovery effort and potentially missing evidence for unapproved propositions.",
+      "TEST_STATEMENT": "A Kanban state check SHALL confirm that all search tasks (S0, S1, S2) have status 'blocked' or equivalent dependency state while the H1 gate task is not 'done'. After H1 reaches 'done', downstream search tasks SHALL auto-promote.",
+      "expected_evidence_scope": "H1 gate Kanban task, S0/S1/S2 Kanban tasks — 4 Kanban task records.",
+      "source_decision_ids": [
+        "P1-DEC-010"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0015",
+      "title": "H2 Gate Blocks Evidence Register",
+      "proposition_text": "The H2 human gate (artifact admission) blocks Evidence Register population and all downstream AI challenge and PESC coding tasks until the PO/researcher confirms each artifact's existence, identity, provenance, boundary, and proposition linkage.",
+      "essential_step_id": "ES-09",
+      "applicability": "P1-ART",
+      "rationale": "AI-discovered artifacts may be hallucinated, misattributed, or irrelevant. Human admission is the critical quality gate preventing invalid artifacts from entering the evidence base.",
+      "TEST_STATEMENT": "A Kanban state check SHALL confirm that Evidence Register admission tasks and AI challenge/coding tasks are blocked while H2 is not 'done'. After H2 completion, every admitted artifact SHALL have a non-null human_admission_status of 'admitted'.",
+      "expected_evidence_scope": "H2 gate Kanban task, Evidence Register entries, evidence packets — approximately 20-100 records.",
+      "source_decision_ids": [
+        "P1-DEC-010"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0016",
+      "title": "H3 Gate Blocks Interpretation",
+      "proposition_text": "The H3 human gate (PESC coding) blocks final interpretation and integration until the PO/researcher assigns TYPE, PUB, DUR, AUT values for all admitted artifacts.",
+      "essential_step_id": "ES-10",
+      "applicability": "P1-ART",
+      "rationale": "AI cannot assign operative PESC codes — the methodology requires human coding for TYPE, PUB, DUR, AUT to prevent AI hallucination from entering the analytic layer.",
+      "TEST_STATEMENT": "A Kanban state check SHALL confirm that H4 (final interpretation) and integration tasks are blocked while H3 is not 'done'. After H3 completion, every admitted artifact SHALL have non-null human-assigned TYPE, PUB, DUR, and AUT fields.",
+      "expected_evidence_scope": "H3 gate Kanban task, pesc-codes.json, all admitted evidence packets — approximately 20-100 records.",
+      "source_decision_ids": [
+        "P1-DEC-010"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0017",
+      "title": "H4 Gate Blocks Manuscript Conclusion",
+      "proposition_text": "The H4 human gate (final interpretation) blocks manuscript conclusion and integration-ready outputs until the PO/researcher approves proposition scores, step profiles, thresholds, and claims.",
+      "essential_step_id": "ES-12",
+      "applicability": "P1-ART",
+      "rationale": "AI can assist interpretation but cannot make final claims. Human approval of proposition scores and thresholds prevents overclaim and ensures interpretive responsibility remains with the researcher.",
+      "TEST_STATEMENT": "A Kanban state check SHALL confirm that integration-ready output tasks are blocked while H4 is not 'done'. The manuscript SHALL not contain interpretive claims that reference proposition scores not approved in the H4 gate record.",
+      "expected_evidence_scope": "H4 gate Kanban task, proposition scores, manuscript working draft — approximately 5-15 documents.",
+      "source_decision_ids": [
+        "P1-DEC-010"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0018",
+      "title": "AI Find-and-Challenge Principle",
+      "proposition_text": "AI operates under a 'find and challenge' principle — AI may discover artifacts and challenge human codes for consistency and completeness, but must not admit artifacts, assign operative PESC codes, vote on evidence value, or produce final conclusions.",
+      "essential_step_id": "ES-11",
+      "applicability": "P1-ART",
+      "rationale": "This principle prevents AI overreach while leveraging AI's strengths in discovery and pattern detection. It assigns the highest-risk decisions (admission, coding, conclusion) exclusively to humans.",
+      "TEST_STATEMENT": "An audit of all AI outputs (S1/S2 discovery logs, AI challenge reports, extraction AI suggestions) SHALL find that every AI judgement is labelled as non-operative or as a suggestion requiring human confirmation. No AI output SHALL directly populate the operative human code fields in pesc-codes.json.",
+      "expected_evidence_scope": "S1/S2 discovery logs, AI challenge outputs, extraction AI suggestions — approximately 10-50 artifacts.",
+      "source_decision_ids": [
+        "P1-DEC-010",
+        "P1-DEC-002"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0019",
+      "title": "Non-Operative AI Coding Label",
+      "proposition_text": "Any PESC code suggestion produced by AI must be labelled as non-operative and stored separately from human-assigned codes. AI suggestions cannot populate the canonical human code fields in pesc-codes.json.",
+      "essential_step_id": "ES-10",
+      "applicability": "P1-ART",
+      "rationale": "Prevents accidental contamination of operative PESC codes with AI-generated values. Enables the no-operative-AI-code canary to verify that human code fields contain only human-assigned values.",
+      "TEST_STATEMENT": "The pesc-codes.json file SHALL contain only records with a human_coder field populated. No record SHALL have a null or 'AI' human_coder value. AI suggestions SHALL be stored in a separate ai_suggestions_non_operative field within evidence packets, not in pesc-codes.json.",
+      "expected_evidence_scope": "pesc-codes.json, evidence packets with ai_suggestions_non_operative — approximately 20-100 records.",
+      "source_decision_ids": [
+        "P1-DEC-002",
+        "P1-DEC-008"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0020",
+      "title": "Synthetic-Only Phase 3 Boundary",
+      "proposition_text": "Phase 3 operates on synthetic test data only — no real electoral data from TSE, CAMARA, SENADO, or FORNECEDOR sources enters the Evidence Register during Phase 3, and all Phase 3 AI outputs are discarded rather than becoming durable evidence.",
+      "essential_step_id": "ES-03",
+      "applicability": "P1-ART",
+      "rationale": "Phase 3 validates infrastructure (profiles, schemas, sealing, Kanban gates). Using real data prematurely would risk contaminating the Evidence Register with test artifacts and prematurely committing to analytic outputs before the methodology is validated.",
+      "TEST_STATEMENT": "An audit of the Evidence Register after Phase 3 completion SHALL find zero entries. All Phase 3 run outputs SHALL be clearly marked as synthetic/non-operative. No Phase 3 artifact SHALL carry a P1-A-NNN identifier.",
+      "expected_evidence_scope": "Evidence Register, Phase 3 run outputs, synthetic data fixtures — approximately 10-30 artifacts.",
+      "source_decision_ids": [
+        "P1-DEC-008"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0021",
+      "title": "Nine Canary Gate for Phase 4",
+      "proposition_text": "Phase 4 (Bounded Real Pilot) cannot begin until all 9 blocker canaries pass: profile, isolation, manifest, union, human-gate, schema, no-operative-AI-code, traceability, and S0 completeness/sufficiency.",
+      "essential_step_id": "ES-06",
+      "applicability": "P1-ART",
+      "rationale": "Phase 4 uses real electoral data and produces durable, operative evidence. Every canary validates a critical methodological safeguard. A single failing canary indicates a methodological defect that would compromise Phase 4 outputs.",
+      "TEST_STATEMENT": "A Phase 4 readiness assessment SHALL enumerate all 9 canaries with individual pass/fail status. The Phase 4 GO decision SHALL be blocked if any canary shows 'fail'. Each canary result SHALL reference the specific run that produced it.",
+      "expected_evidence_scope": "Canary run outputs (9), Phase 4 readiness assessment, PO GO decision record — approximately 11 documents.",
+      "source_decision_ids": [
+        "P1-DEC-009",
+        "P1-DEC-011"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0022",
+      "title": "Separate PO GO for Phase 4",
+      "proposition_text": "Phase 4 requires a separate, explicit PO GO decision — it is NOT authorised by the Phase 0\u20133 authorisation milestone P1-M02 and cannot proceed without a new PO decision following Phase 3 completion and all 9 canaries passing.",
+      "essential_step_id": "ES-06",
+      "applicability": "P1-ART",
+      "rationale": "Phase 4 involves real data and operative coding — a fundamentally different risk profile from Phase 3's synthetic validation. Governance visibility is required before production data is touched.",
+      "TEST_STATEMENT": "The Phase 4 GO decision record SHALL be a separate document from the Phase 0-3 authorisation. It SHALL reference the Phase 3 completion status, all 9 canary results, and the Phase 4 readiness validation verdict. Its date SHALL be after the Phase 3 completion date.",
+      "expected_evidence_scope": "Phase 4 GO decision record, Phase 3 completion attestation, 9 canary results, Phase 4 readiness validation — approximately 12 documents.",
+      "source_decision_ids": [
+        "P1-DEC-011"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0023",
+      "title": "V0 Requires Completed Search Protocol",
+      "proposition_text": "A V0 (not-found / no-evidence) value cannot be assigned to any proposition unless the S0 systematic search protocol has been completed in full and a stopping-rule attestation has been produced.",
+      "essential_step_id": "ES-03",
+      "applicability": "P1-ART",
+      "rationale": "V0 is a strong claim — that no public evidence exists for a proposition. It must be backed by a completed, attested search to distinguish genuine absence of evidence from incomplete search.",
+      "TEST_STATEMENT": "Every proposition with V=0 (or INCONCLUSIVE derived from not-found) SHALL be traceable to a completed S0 run whose stopping-rule-attestation.md confirms SEARCH_COMPLETED. No V0 SHALL exist without a corresponding completed S0 run.",
+      "expected_evidence_scope": "S0 stopping-rule-attestation.md, propositions with V0 values, S0 search log — approximately 5-20 records.",
+      "source_decision_ids": [
+        "P1-DEC-002",
+        "P1-DEC-004"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0024",
+      "title": "Full Traceability Chain",
+      "proposition_text": "At least 90% of manuscript claims must be traceable through the chain: claim \u2192 result \u2192 proposition \u2192 artifact \u2192 source, with each link supported by a durable, versioned record.",
+      "essential_step_id": "ES-13",
+      "applicability": "P1-ART",
+      "rationale": "Traceability is the foundational reproducibility guarantee. Without it, claims cannot be audited, challenged, or reproduced. Every link must be independently verifiable.",
+      "TEST_STATEMENT": "A traceability audit SHALL select a random sample of manuscript claims and verify that each claim maps to a result record, which maps to a proposition, which maps to one or more artifacts, which map to specific sources with stable identifiers. At least 90% of sampled claims SHALL have complete chains.",
+      "expected_evidence_scope": "Manuscript draft, results tables, Proposition Register entries, Evidence Register entries, source attribution records — approximately 50-200 linked records.",
+      "source_decision_ids": [
+        "P1-DEC-003"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0025",
+      "title": "Screening Eligibility-Only Constraint",
+      "proposition_text": "Screening agents determine artifact eligibility only and must not assign PESC values, make artifact admission decisions, or produce operative coding. All screening exclusions must be preserved with explicit reasons.",
+      "essential_step_id": "ES-07",
+      "applicability": "P1-ART",
+      "rationale": "Screening is a filtering step, not an evaluation step. Allowing screening agents to assign PESC values would blur the boundary between filtering and coding, and could introduce premature AI judgements before human admission (H2) and human coding (H3).",
+      "TEST_STATEMENT": "An audit of all screening outputs SHALL find only eligibility decisions (include/exclude) with reasons. No screening output SHALL contain TYPE, PUB, DUR, or AUT fields. All excluded candidates SHALL have a non-empty exclusion_reason field.",
+      "expected_evidence_scope": "Screening log JSON, excluded candidates list — approximately 10-100 screening decisions.",
+      "source_decision_ids": [
+        "P1-DEC-001"
+      ]
+    },
+    {
+      "proposition_id": "P1-P-0026",
+      "title": "Extraction Verbatim Anchoring",
+      "proposition_text": "Every evidence packet must include verbatim artifact excerpts as the minimum traceability anchor to the source. AI extraction suggestions must be labelled non-operative and validated against actual artifact metadata before becoming durable evidence packet content.",
+      "essential_step_id": "ES-08",
+      "applicability": "P1-ART",
+      "rationale": "Verbatim excerpts are the strongest traceability anchor because they are independently verifiable against the source. AI extractions without verbatim anchoring risk hallucinated content entering evidence packets. Non-operative labelling prevents AI extraction from being mistaken for human-validated content.",
+      "TEST_STATEMENT": "Every evidence packet in the Evidence Register SHALL have a non-empty verbatim_excerpts array. An audit comparing a random sample of excerpts against their source URLs/documents SHALL confirm textual correspondence. AI extraction suggestions SHALL be stored in ai_suggestions_non_operative, not in the primary packet fields.",
+      "expected_evidence_scope": "Evidence packets in Evidence Register, source artifacts — approximately 20-100 packets.",
+      "source_decision_ids": [
+        "P1-DEC-002"
+      ]
+    }
+  ]
+}
